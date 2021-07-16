@@ -7,5 +7,10 @@ spring:
         predicates:
         - Path=/actuator/health/**
 
+      - id: pokemon-service
+        uri: lb://pokemon-service
+        predicates:
+        - Path=/pokemon/**
+
     forwarded:
       enabled: true
