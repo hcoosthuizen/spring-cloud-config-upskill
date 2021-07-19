@@ -17,7 +17,7 @@ spring:
         predicates:
         - Path=/ws-endpoint/**
         filters:
-        - RewritePath=/ws-endpoint/(?.*),/${remains}
+        - RewritePath=/ws-endpoint/(?.*), /$\{remains}
 
     forwarded:
       enabled: true
