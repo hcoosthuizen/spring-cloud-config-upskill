@@ -11,6 +11,13 @@ spring:
         uri: lb://pokemon-service
         predicates:
         - Path=/pokemon/**
+        
+      - id: websocket-route
+        uri: lb://pokemon-service
+        predicates:
+        - Path=/ws-endpoint/**
+        filters:
+        - RewritePath=/ws-endpoint/(?.*),/${remains}
 
     forwarded:
       enabled: true
